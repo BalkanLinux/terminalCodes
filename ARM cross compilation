@@ -1,0 +1,21 @@
+apt-get install git-core gnupg flex bison gperf libesd0-dev build-essential \
+
+zip curl libncurses5-dev zlib1g-dev libncurses5-dev gcc-multilib g++-multilib
+
+dpkg --add-architecture i386
+
+apt-get update
+
+apt-get install ia32-libs
+
+cd ~
+
+mkdir -p arm-stuff/kernel/toolchains
+
+cd arm-stuff/kernel/toolchains
+
+git clone git://github.com/offensive-security/arm-eabi-linaro-4.6.2.git
+
+export ARCH=arm
+
+export CROSS_COMPILE=~/arm-stuff/kernel/toolchains/arm-eabi-linaro-4.6.2/bin/arm-eabi-
