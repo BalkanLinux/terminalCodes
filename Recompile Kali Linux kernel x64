@@ -1,0 +1,32 @@
+apt-get install kernel-package ncurses-dev fakeroot bzip2
+
+apt-get install linux-source
+
+cd /usr/src/
+
+tar jxpf linux-source-3.7.tar.bz2
+
+cd linux-source-3.7/
+
+
+
+cp /boot/config-3.7-trunk-amd64 .config
+
+make menuconfig
+
+
+export CONCURRENCY_LEVEL=$(cat /proc/cpuinfo|grep processor|wc -l)
+
+make-kpkg clean
+
+fakeroot make-kpkg kernel_image
+
+
+
+dpkg -i ../linux-image-3.7.2_3.7.2-10.00.Custom_amd64.deb
+
+update-initramfs -c -k 3.7.2
+
+update-grub2
+
+reboot
