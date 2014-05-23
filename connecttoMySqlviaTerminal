@@ -1,0 +1,23 @@
+mysql -u DBUSER -h DBSERVERNAME -p 
+
+ mysql -u vivek -h localhost -p
+ 
+ // NOTICE! 
+ // You must have this PhP  code in MySql database
+ 
+ 
+ 
+ <?php
+   $link = mysql_connect("localhost", "USERNAME", "PASSWORD");
+   mysql_select_db("DATABASE");
+   $query = "SELECT * FROM TABLE";
+   $result = mysql_query($query);
+   while ($line = mysql_fetch_array($result))
+   {
+      foreach ($line as $value)
+       {
+         print "$value\n";
+      }
+   }
+    mysql_close($link);
+?>
