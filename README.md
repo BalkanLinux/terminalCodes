@@ -1,2 +1,2 @@
-This  is operating system based on Debian for ARM pocessors. This is open source project. We need developers. Our facebook group:
+Repository for Linux codes in terminal. Our facebook group:
 www.facebook.com/groups/linuxbalkan
