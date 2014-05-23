@@ -1,0 +1,15 @@
+apt-get source libfreefare
+
+cd libfreefare-0.3.4~svn1469/
+
+nano examples/mifare-classic-format.c
+
+dpkg-checkbuilddeps
+
+dpkg-checkbuilddeps: Unmet build dependencies: dh-autoreconf libnfc-dev
+
+apt-get install dh-autoreconf libnfc-dev
+
+dpkg-buildpackage
+
+dpkg -i ../libfreefare*.deb
